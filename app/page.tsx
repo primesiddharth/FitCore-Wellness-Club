@@ -59,7 +59,7 @@ export default function Home() {
       <Hero />
 
       {/* 2. Stats bar */}
-      <section id="stats" className="relative -mt-24 z-10">
+      <section id="stats" className="relative mt-16 z-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {site.stats.map((stat, i) => (

@@ -56,7 +56,7 @@ export default function Hero() {
           {/* Phone inline */}
           <a
             href={site.phoneHref}
-            className="reveal mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors hover:text-volt-500"
+            className="reveal mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors hover:text-volt-500"
           >
             <Phone className="h-4 w-4 text-volt-500" />
             Or call us: {site.phone}

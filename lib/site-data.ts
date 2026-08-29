@@ -90,7 +90,7 @@ export const programs: Program[] = [
     description:
       'Dance, sweat and push through high-energy group sessions led by certified instructors. From rhythm-driven Zumba to heart-pounding HIIT circuits, our group classes turn fitness into the most fun part of your week.',
     image:
-      'https://images.pexels.com/photos/4807082/pexels-photo-4807082.jpeg?auto=compress&cs=tinysrgb&w=1000',
+      'https://images.pexels.com/photos/38292964/pexels-photo-38292964.jpeg',
     icon: 'Users',
     intensity: 'All Levels',
     duration: '45–55 min',
@@ -108,7 +108,7 @@ export const programs: Program[] = [
     description:
       'Slow down and reconnect. Our yoga and mindfulness sessions combine Vinyasa flow, breathwork and guided meditation to improve flexibility, reduce stress and build the mental resilience that powers every other workout.',
     image:
-      'https://images.pexels.com/photos/8436402/pexels-photo-8436402.jpeg?auto=compress&cs=tinysrgb&w=1000',
+      'https://images.pexels.com/photos/38366608/pexels-photo-38366608.jpeg',
     icon: 'Flower2',
     intensity: 'Beginner',
     duration: '60 min',
@@ -144,7 +144,7 @@ export const programs: Program[] = [
     description:
       'Train like an athlete with constantly varied, high-intensity functional movements. Our CrossFit box blends weightlifting, gymnastics and metabolic conditioning into workouts that forge strength, speed and grit — scaled to every ability.',
     image:
-      'https://images.pexels.com/photos/4720827/pexels-photo-4720827.jpeg?auto=compress&cs=tinysrgb&w=1000',
+      'https://images.pexels.com/photos/23880157/pexels-photo-23880157.jpeg',
     icon: 'Flame',
     intensity: 'Intermediate',
     duration: '60 min',
@@ -162,7 +162,7 @@ export const programs: Program[] = [
     description:
       'Training is only half the equation. Our nutrition coaches build realistic, whole-food meal plans around your lifestyle — no crash diets, no guilt. Paired with smart training, it is the most reliable way to lose fat and keep it off.',
     image:
-      'https://images.pexels.com/photos/5237899/pexels-photo-5237899.jpeg?auto=compress&cs=tinysrgb&w=1000',
+      'https://images.pexels.com/photos/15319040/pexels-photo-15319040.jpeg',
     icon: 'Salad',
     intensity: 'All Levels',
     duration: 'Weekly',
@@ -200,7 +200,7 @@ export const trainers: Trainer[] = [
     bio: 'Priya blends traditional Hatha training with modern mobility science to help members move better, recover faster and breathe deeper.',
     experience: '9 years',
     image:
-      'https://images.pexels.com/photos/8436684/pexels-photo-8436684.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/36917053/pexels-photo-36917053.jpeg',
     certifications: ['RYT-500', 'Mobility Specialist'],
   },
   {
@@ -218,7 +218,7 @@ export const trainers: Trainer[] = [
     bio: 'Sara brings ten years of stage choreography into the studio. Her classes are equal parts sweat, smiles and serious cardio.',
     experience: '8 years',
     image:
-      'https://images.pexels.com/photos/37156646/pexels-photo-37156646.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/7444369/pexels-photo-7444369.jpeg',
     certifications: ['ZIN', 'ACE Group Fitness'],
   },
   {
@@ -236,7 +236,7 @@ export const trainers: Trainer[] = [
     bio: 'Registered dietitian turned habit coach. Ananya turns confusing nutrition science into simple, repeatable meals you actually enjoy.',
     experience: '7 years',
     image:
-      'https://images.pexels.com/photos/5427310/pexels-photo-5427310.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/14623716/pexels-photo-14623716.jpeg',
     certifications: ['RD', 'Precision Nutrition L1'],
   },
 ];

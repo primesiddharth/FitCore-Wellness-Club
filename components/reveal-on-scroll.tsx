@@ -1,36 +1,69 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-/**
- * Adds a global IntersectionObserver that toggles [data-visible='true']
- * on any element with the `.reveal` class once it scrolls into view.
- * Mounted once near the root of the app.
- */
 export function RevealOnScroll() {
   useEffect(() => {
-    const els = Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
-    if (els.length === 0) return;
+    if (typeof window === "undefined") return;
 
-    if (typeof IntersectionObserver === 'undefined') {
-      els.forEach((el) => el.setAttribute('data-visible', 'true'));
-      return;
-    }
+    const revealElements = new Set<Element>();
+
+    const reveal = (el: Element) => {
+      el.setAttribute("data-visible", "true");
+      revealElements.delete(el);
+      observer.unobserve(el);
+    };
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.setAttribute('data-visible', 'true');
-            observer.unobserve(entry.target);
+            reveal(entry.target);
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -60px 0px",
+      },
     );
 
-    els.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    // Observe existing elements
+    document.querySelectorAll(".reveal").forEach((el) => {
+      revealElements.add(el);
+      observer.observe(el);
+    });
+
+    // Watch for newly rendered .reveal elements
+    const mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (!(node instanceof HTMLElement)) return;
+
+          // The added element itself
+          if (node.classList.contains("reveal")) {
+            revealElements.add(node);
+            observer.observe(node);
+          }
+
+          // Any .reveal elements inside it
+          node.querySelectorAll?.(".reveal").forEach((el) => {
+            revealElements.add(el);
+            observer.observe(el);
+          });
+        });
+      });
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, []);
 
   return null;

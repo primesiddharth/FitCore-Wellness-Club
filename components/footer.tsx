@@ -1,6 +1,16 @@
-import Link from 'next/link';
-import { Dumbbell, Phone, Mail, MapPin, Clock, Instagram, Facebook, Heart } from 'lucide-react';
-import { site, navLinks, programs } from '@/lib/site-data';
+import Link from "next/link";
+import {
+  Dumbbell,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Instagram,
+  Facebook,
+  Heart,
+} from "lucide-react";
+import { site, navLinks, programs } from "@/lib/site-data";
+import Image from "next/image";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -14,17 +24,31 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-volt-500 text-ink-950">
-                <Dumbbell className="h-5 w-5" strokeWidth={2.5} />
+            <Link
+              href="/"
+              className="flex items-center gap-2"
+              aria-label="FitCore Wellness Club home"
+            >
+              {/* Logo Image */}
+              <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
+                <Image
+                  src="/logo.jpg"
+                  alt="FitCore Wellness Club logo"
+                  fill
+                  priority
+                  className="object-contain"
+                  sizes="40px"
+                />
               </span>
+
+              {/* Brand Name */}
               <span className="font-display text-xl font-extrabold uppercase tracking-tight text-white">
                 Fit<span className="text-volt-500">Core</span>
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/60 max-w-xs">
-              {site.tagline} A premium fitness and wellness community in the heart of Kolkata —
-              built to help you become your strongest self.
+              {site.tagline} A premium fitness and wellness community in the
+              heart of Kolkata — built to help you become your strongest self.
             </p>
             <div className="mt-5 flex items-center gap-3">
               <a
@@ -93,13 +117,19 @@ export default function Footer() {
                 <span>{site.address}</span>
               </li>
               <li>
-                <a href={site.phoneHref} className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-volt-500">
+                <a
+                  href={site.phoneHref}
+                  className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-volt-500"
+                >
                   <Phone className="h-4 w-4 shrink-0 text-volt-500" />
                   <span>{site.phone}</span>
                 </a>
               </li>
               <li>
-                <a href={site.emailHref} className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-volt-500">
+                <a
+                  href={site.emailHref}
+                  className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-volt-500"
+                >
                   <Mail className="h-4 w-4 shrink-0 text-volt-500" />
                   <span>{site.email}</span>
                 </a>
@@ -118,12 +148,26 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10 py-6 text-center">
-        <p className="text-sm text-white/50">
+      <div className="border-t border-white/10 py-6 flex justify-between px-10">
+        <p className="text-xs text-white/50">
           &copy; {year} {site.name}. All rights reserved.
         </p>
-        <p className="mt-1.5 text-xs text-white/30">
-          Made with <Heart className="inline h-3 w-3 fill-volt-500 text-volt-500" aria-label="love" /> by Creyotech
+
+        <p className="mt-1.5 inline-flex items-center gap-1 text-xs text-white/40">
+          Made with
+          <Heart
+            className="h-3 w-3 fill-volt-500 animate-pulse text-volt-500"
+            aria-label="love"
+          />
+          by{" "}
+          <a
+            href="https://creyotech.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-white/60 transition-colors duration-200 hover:text-volt-500"
+          >
+            Creyotech IT Services
+          </a>
         </p>
       </div>
     </footer>

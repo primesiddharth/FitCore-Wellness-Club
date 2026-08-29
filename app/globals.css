@@ -65,7 +65,11 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     @apply font-display tracking-tight;
   }
 }
@@ -74,15 +78,16 @@
   .text-balance {
     text-wrap: balance;
   }
-  /* Reveal-on-scroll: element starts hidden, animates in when [data-visible] is set */
   .reveal {
     opacity: 0;
     transform: translateY(28px);
-    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform;
   }
-  .reveal[data-visible='true'] {
+
+  .reveal[data-visible="true"] {
     opacity: 1;
     transform: none;
   }
@@ -91,11 +96,8 @@
     color: transparent;
   }
   .bg-grid {
-    background-image: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.06) 1px,
-        transparent 1px
-      ),
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
     background-size: 48px 48px;
   }
